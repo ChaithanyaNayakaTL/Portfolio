@@ -3,7 +3,13 @@ import AnimatedText from '../components/AnimatedText'
 import ContactButton from '../components/ContactButton'
 
 const ABOUT_TEXT =
-  "I’m a Computer Science Engineering student with a strong foundation in Data Structures & Algorithms, software engineering, backend development, and full-stack development. I enjoy building practical applications that combine modern web technologies with AI to solve meaningful real-world problems. My experience includes developing AI-powered accessibility solutions, cloud cost optimization platforms, and intelligent recommendation systems."
+  "I’m a Computer Science Engineering student focused on building practical software that blends strong engineering fundamentals with real-world product thinking. I enjoy turning complex problems into useful experiences through thoughtful design, solid backend architecture, and AI-enhanced workflows."
+
+const HIGHLIGHTS = [
+  { label: 'Approach', value: 'Build for clarity' },
+  { label: 'Mindset', value: 'Ship useful ideas' },
+  { label: 'Direction', value: 'Product-minded engineering' },
+]
 
 function MoonGlyph({ className }: { className?: string }) {
   return (
@@ -104,13 +110,31 @@ export default function AboutSection() {
         </p>
       </FadeIn>
 
-      <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16 mt-10 sm:mt-14 md:mt-16">
-        <AnimatedText
-          text={ABOUT_TEXT}
-          className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
-          style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
-        />
-        <div className="mt-6 sm:mt-8 md:mt-10">
+      <div className="mt-10 sm:mt-14 md:mt-16 flex w-full max-w-6xl flex-col items-center gap-10 sm:gap-14 md:gap-16">
+        <div className="grid w-full items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <FadeIn delay={0.2} y={25} className="rounded-[32px] border border-white/10 bg-white/5 p-6 sm:p-8 md:p-10 backdrop-blur-sm">
+            <AnimatedText
+              text={ABOUT_TEXT}
+              className="text-[#D7E2EA] font-medium leading-relaxed"
+              style={{ fontSize: 'clamp(1rem, 2vw, 1.45rem)' }}
+            />
+          </FadeIn>
+
+          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            {HIGHLIGHTS.map((item, index) => (
+              <FadeIn key={item.label} delay={0.25 + index * 0.1} y={20}>
+                <div className="rounded-[24px] border border-white/10 bg-[#121212] p-5 text-left">
+                  <p className="text-[#D7E2EA]/60 uppercase tracking-[0.22em] text-[10px] sm:text-xs">{item.label}</p>
+                  <p className="mt-3 text-[#D7E2EA] font-medium uppercase leading-relaxed" style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
+                    {item.value}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-2 sm:mt-4 md:mt-6">
           <ContactButton />
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { Github, Linkedin, Mail, FileText } from 'lucide-react'
 import FadeIn from '../components/FadeIn'
 import ContactButton from '../components/ContactButton'
 
@@ -16,9 +17,20 @@ export default function ContactSection() {
             Interested in working together or discussing software engineering opportunities, projects, and innovative ideas? Feel free to reach out.
           </p>
           <ContactButton href="mailto:chathu123tl@gmail.com" label="Email Me" />
-          <div className="flex gap-6 mt-2 text-[#D7E2EA]/60 uppercase tracking-widest text-xs sm:text-sm">
-            <a href="http://linkedin.com/in/chaithanyatl" target="_blank" rel="noreferrer" className="hover:text-[#D7E2EA] transition-colors">LinkedIn</a>
-            <a href="https://github.com/ChaithanyaNayakaTL" target="_blank" rel="noreferrer" className="hover:text-[#D7E2EA] transition-colors">GitHub</a>
+
+          <div className="card" aria-label="social links">
+            <a className="social-link1" href="http://linkedin.com/in/chaithanyatl" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <Linkedin />
+            </a>
+            <a className="social-link2" href="https://github.com/ChaithanyaNayakaTL" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <Github />
+            </a>
+            <a className="social-link3" href="mailto:chathu123tl@gmail.com" aria-label="Email">
+              <Mail />
+            </a>
+            <a className="social-link4" href="https://drive.google.com/" target="_blank" rel="noreferrer" aria-label="Resume">
+              <FileText />
+            </a>
           </div>
         </div>
       </FadeIn>

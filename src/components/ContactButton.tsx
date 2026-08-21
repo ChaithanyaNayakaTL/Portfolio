@@ -12,16 +12,16 @@ export default function ContactButton({
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center rounded-full px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base font-medium uppercase tracking-widest text-white transition-transform duration-200 hover:scale-[1.03] ${className}`}
-      style={{
-        background:
-          'linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)',
-        boxShadow: '0px 4px 4px rgba(181, 1, 167, 0.25), 4px 4px 12px #7721B1 inset',
-        outline: '2px solid white',
-        outlineOffset: '-3px',
-      }}
+      className={`hero-connect-button ${className}`}
+      aria-label={label}
     >
-      {label}
+      <span className="dots_border" aria-hidden="true" />
+      <svg className="sparkle" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path className="path" d="M12 2.5L13.8 8.2L19.5 10L13.8 11.8L12 17.5L10.2 11.8L4.5 10L10.2 8.2L12 2.5Z" />
+        <path className="path" d="M18.5 14.5L19.1 16.9L21.5 17.5L19.1 18.1L18.5 20.5L17.9 18.1L15.5 17.5L17.9 16.9L18.5 14.5Z" />
+        <path className="path" d="M5.5 14.5L6.1 16.9L8.5 17.5L6.1 18.1L5.5 20.5L4.9 18.1L2.5 17.5L4.9 16.9L5.5 14.5Z" />
+      </svg>
+      <span className="text_button">{label}</span>
     </a>
   )
 }

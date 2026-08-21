@@ -27,9 +27,15 @@ const SERVICES = [
   },
   {
     number: '05',
+    name: 'Backend & API Engineering',
+    description:
+      'FastAPI, REST APIs, JWT, API Integration, MongoDB, H2.',
+  },
+  {
+    number: '06',
     name: 'Tools I Work With',
     description:
-      'React, FastAPI, YOLOv8, MongoDB, Firebase, H2 Database, Git, GitHub, and VS Code.',
+      'Git, GitHub, VS Code, Docker, Postman.',
   },
 ]
 
@@ -37,7 +43,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
+      className="section-shell bg-white rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32"
     >
       <FadeIn delay={0} y={40}>
         <h2
@@ -48,32 +54,23 @@ export default function ServicesSection() {
         </h2>
       </FadeIn>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="relative mx-auto grid max-w-6xl gap-5 md:grid-cols-2 xl:grid-cols-3">
         {SERVICES.map((service, i) => (
-          <FadeIn key={service.number} delay={i * 0.1} y={20}>
-            <div
-              className="flex items-center gap-6 sm:gap-10 py-8 sm:py-10 md:py-12"
-              style={{ borderBottom: '1px solid rgba(12, 12, 12, 0.15)' }}
-            >
-              <span
-                className="font-black text-[#0C0C0C] flex-shrink-0"
-                style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
-              >
-                {service.number}
-              </span>
-              <div className="flex flex-col gap-2 sm:gap-3">
-                <h3
-                  className="text-[#0C0C0C] font-medium uppercase"
-                  style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}
-                >
-                  {service.name}
-                </h3>
-                <p
-                  className="text-[#0C0C0C] font-light leading-relaxed max-w-2xl"
-                  style={{ fontSize: 'clamp(0.85rem, 1.6vw, 1.25rem)', opacity: 0.6 }}
-                >
-                  {service.description}
-                </p>
+          <FadeIn key={service.number} delay={i * 0.08} y={20}>
+            <div className="skill-card group">
+              <div className="skill-card-front">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="skill-number">{service.number}</span>
+                  <div className="skill-divider" />
+                </div>
+
+                <div className="flex flex-col gap-3">
+                  <h3 className="skill-title">{service.name}</h3>
+                </div>
+              </div>
+
+              <div className="skill-card-back">
+                <p className="skill-back-copy">{service.description}</p>
               </div>
             </div>
           </FadeIn>
